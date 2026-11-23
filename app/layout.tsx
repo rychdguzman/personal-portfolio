@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
-  description: "Built with React Bits Pro.",
+  title: "rycdguzman",
+  description: "isiah 60:22",
 };
 
 export default function RootLayout({
