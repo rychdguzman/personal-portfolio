@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export default function Footer2() {
   const containerVariants = {
@@ -24,8 +24,27 @@ export default function Footer2() {
     },
   };
 
+  const socialLinks = [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/_yanyanaquino___/",
+      icon: Instagram,
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/ryan-christian-de-guzman/",
+      icon: Linkedin,
+    },
+    {
+      name: "Email",
+      href: "mailto:rychristdguzman@gmail.com",
+      icon: Mail,
+    },
+  ];
+
   return (
     <footer className="relative w-full overflow-hidden px-4 sm:px-6 lg:px-8">
+      {/* Background image */}
       <div className="absolute inset-0 h-full w-full">
         <img
           src="https://images.unsplash.com/photo-1616144058124-979005390426?w=1744&q=80&auto=format&fit=crop"
@@ -42,6 +61,7 @@ export default function Footer2() {
         <div className="h-32 sm:h-40 md:h-48" />
 
         <div className="relative bg-white dark:bg-neutral-950">
+          {/* Decorative top corners */}
           <div className="absolute left-0 top-0 z-10 -translate-y-full">
             <svg
               width="614"
@@ -82,83 +102,101 @@ export default function Footer2() {
               viewport={{ once: true, margin: "-100px" }}
               className="flex flex-col items-center space-y-8 sm:space-y-10 md:space-y-12"
             >
+              {/* Identity */}
               <motion.div variants={itemVariants} className="text-center">
                 <h2 className="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  frequency
+                  Ryan De Guzman
                 </h2>
-                <p className="mt-2 text-xl font-medium tracking-tight text-neutral-950 dark:text-white sm:text-2xl md:text-3xl">
-                  studios
+
+                <p className="mt-3 text-sm font-medium uppercase tracking-[0.25em] text-neutral-500 dark:text-neutral-400 sm:text-base">
+                  Full-Stack Software Developer
                 </p>
               </motion.div>
 
+              {/* Navigation */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-neutral-950 dark:text-white sm:gap-4 sm:text-base"
+                className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-neutral-950 dark:text-white sm:gap-5 sm:text-base"
               >
                 <a
-                  href="#"
-                  className="rounded-sm transition-colors duration-200 hover:text-neutral-500 dark:hover:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950"
+                  href="#aboutme"
+                  className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-400"
                 >
-                  Book a session
+                  About Me
                 </a>
-                <span
-                  aria-hidden="true"
-                  className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"
-                />
+
+                <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+
                 <a
-                  href="#"
-                  className="rounded-sm transition-colors duration-200 hover:text-neutral-500 dark:hover:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950"
+                  href="#projects"
+                  className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-400"
                 >
-                  Join the waitlist
+                  Projects
+                </a>
+
+                <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+
+                <a
+                  href="#contact"
+                  className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-400"
+                >
+                  Get in Touch
                 </a>
               </motion.div>
 
+              {/* Social links */}
               <motion.div
                 variants={itemVariants}
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target={social.name === "Email" ? undefined : "_blank"}
+                      rel={
+                        social.name === "Email"
+                          ? undefined
+                          : "noopener noreferrer"
+                      }
+                      aria-label={social.name}
+                      className="group flex h-12 w-12 items-center justify-center rounded-full border border-neutral-200 text-neutral-950 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-950 hover:text-white dark:border-neutral-800 dark:text-white dark:hover:bg-white dark:hover:text-neutral-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-white"
+                    >
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </a>
+                  );
+                })}
+              </motion.div>
+
+              {/* Email CTA */}
+              <motion.div variants={itemVariants} className="text-center">
                 <a
-                  href="#"
-                  className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-950 transition-colors duration-200 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950"
-                  aria-label="Instagram"
+                  href="mailto:rychristdguzman@gmail.com"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-neutral-950 transition-colors hover:text-neutral-500 dark:text-white dark:hover:text-neutral-400 sm:text-base"
                 >
-                  <Instagram className="h-6 w-6" strokeWidth={1.75} />
-                </a>
-                <a
-                  href="#"
-                  className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-950 transition-colors duration-200 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950"
-                  aria-label="Twitter"
-                >
-                  <svg
-                    className="h-[22px] w-[22px]"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="flex h-11 w-11 items-center justify-center rounded-full text-neutral-950 transition-colors duration-200 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-6 w-6" strokeWidth={1.75} />
+                  rychristdguzman@gmail.com
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </a>
               </motion.div>
 
+              {/* Copyright and closing statement */}
               <motion.div
                 variants={itemVariants}
-                className="flex w-full flex-col items-center justify-between gap-6 pt-4 text-center sm:flex-row sm:items-end sm:text-left md:pt-8"
+                className="flex w-full flex-col items-center justify-between gap-5 border-t border-neutral-200 pt-8 text-center dark:border-neutral-800 sm:flex-row sm:text-left"
               >
                 <div className="text-sm text-neutral-500 dark:text-neutral-400">
-                  <p>© 2026 Frequency Studios. All rights reserved.</p>
+                  <p>
+                    © {new Date().getFullYear()} Ryan Christian De Guzman. All
+                    rights reserved.
+                  </p>
                 </div>
 
                 <div className="text-sm text-neutral-500 dark:text-neutral-400 sm:text-right">
-                  <p>Analog and digital</p>
-                  <p>Grammy-winning engineers</p>
-                  <p>Est. 2017</p>
+                  <p>Building meaningful digital experiences.</p>
+                  <p>Designed & developed with passion.</p>
                 </div>
               </motion.div>
             </motion.div>

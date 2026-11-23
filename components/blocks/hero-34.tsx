@@ -770,7 +770,7 @@ export function Hero34() {
   const oceanRef = useRef<Ocean | null>(null);
   const optionsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const intentRef = useRef(0);
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -812,6 +812,7 @@ export function Hero34() {
 
   return (
     <section
+      id="aboutme"
       ref={sectionRef}
       className="relative isolate flex min-h-screen w-full flex-col overflow-hidden bg-white px-4 pb-10 pt-20 text-neutral-950 dark:bg-neutral-950 dark:text-white sm:px-6 sm:pt-24 lg:px-8 lg:pb-12"
     >
@@ -882,7 +883,7 @@ export function Hero34() {
               Download Resume
             </a>
             <a
-              href="#"
+              href="#projects"
               className="group inline-flex h-12 items-center gap-2 rounded-full text-sm font-medium text-neutral-700 transition-colors duration-200 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current dark:text-neutral-300 dark:hover:text-white"
             >
               Projects
