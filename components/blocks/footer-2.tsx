@@ -105,7 +105,7 @@ export default function Footer2() {
               {/* Identity */}
               <motion.div variants={itemVariants} className="text-center">
                 <h2 className="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  Ryan De Guzman
+                  Ryan Chirstian De Guzman
                 </h2>
 
                 <p className="mt-3 text-sm font-medium uppercase tracking-[0.25em] text-neutral-500 dark:text-neutral-400 sm:text-base">

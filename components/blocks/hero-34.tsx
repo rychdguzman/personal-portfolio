@@ -24,7 +24,7 @@ const BREAKS: {
   {
     name: "Hi there, I'm",
     place: "",
-    swell: "rycdguzman",
+    swell: "< Hi there / >",
     status: "Ryan Christian De Guzman",
     detail:
       "I'am a solutions developer, full stack engineer, and AI engineer. I have a passion for all things technology and design.",

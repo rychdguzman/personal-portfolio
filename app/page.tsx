@@ -8,6 +8,7 @@ import Contact3 from "@/components/blocks/contact-3";
 import Footer2 from "@/components/blocks/footer-2";
 import Features16 from "@/components/blocks/features-16";
 import Features9 from "@/components/blocks/features-9";
+import Integration1 from "@/components/blocks/integration-1";
 
 /**
  * Personal Portfolio
@@ -29,6 +30,7 @@ export default function Page() {
       <BentoGrid />
       <Features17 />
       {/* <Showcase10 /> */}
+      <Integration1 />
       <Cta8 />
       {/* <Features16 /> */}
       <Features9 />

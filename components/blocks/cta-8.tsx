@@ -137,7 +137,7 @@ export default function Cta8() {
           WebkitTextStroke: "1px rgba(0,0,0,0.18)",
         }}
       >
-        RYCDGUZMAN
+        RYAN
       </motion.p>
       <motion.p
         aria-hidden="true"
@@ -149,7 +149,7 @@ export default function Cta8() {
           WebkitTextStroke: "1px rgba(255,255,255,0.16)",
         }}
       >
-        RYCDGUZMAN
+        RYAN
       </motion.p>
 
       <motion.h2
@@ -164,7 +164,7 @@ export default function Cta8() {
           maskRepeat: "no-repeat",
         }}
       >
-        RYCDGUZMAN
+        CHRISTIAN
       </motion.h2>
     </section>
   );

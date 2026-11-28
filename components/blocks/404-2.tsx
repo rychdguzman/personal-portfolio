@@ -87,7 +87,7 @@ export default function NotFound2() {
             {...rise(0.15)}
             className="mt-2 text-4xl font-medium leading-[1.06] tracking-tight text-neutral-950 sm:text-5xl md:text-6xl dark:text-white"
           >
-            Page not found.
+            Oooopss... Page not found.
           </motion.h1>
 
           <motion.p
